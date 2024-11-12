@@ -4,7 +4,8 @@
 #include <QFile>
 #include <QString>
 #include <iostream>
-
+#include <QDate>
+class userDYH;
 
 
 
