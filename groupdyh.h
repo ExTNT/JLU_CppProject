@@ -9,8 +9,7 @@ public:
     QString group_name;
     //群号
     QString group_number;
-
-
+    //群成员
     userDYH** members;
     groupDYH();
 };
