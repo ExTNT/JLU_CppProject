@@ -3,6 +3,7 @@
 
 #include <QWidget>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -16,8 +17,13 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    void LinkVuce(QWidget* p);
+
+private slots:
+    void on_vuce_pbt_clicked();
 
 private:
     Ui::Widget *ui;
+    QWidget *vuce;
 };
 #endif // WIDGET_H

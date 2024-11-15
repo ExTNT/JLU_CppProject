@@ -17,6 +17,7 @@ public:
     //好友
     userDYH** friend_list;
 
+
     userDYH();
 };
 

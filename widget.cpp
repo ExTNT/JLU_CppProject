@@ -12,3 +12,15 @@ Widget::~Widget()
 {
     delete ui;
 }
+
+void Widget::LinkVuce(QWidget *p)
+{
+    vuce=p;
+}
+
+void Widget::on_vuce_pbt_clicked()
+{
+    this->hide();
+    vuce->show();
+}
+

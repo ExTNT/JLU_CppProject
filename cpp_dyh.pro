@@ -12,15 +12,18 @@ SOURCES += \
     groupdyh.cpp \
     main.cpp \
     userdyh.cpp \
+    vucewidget.cpp \
     widget.cpp
 
 HEADERS += \
     global.h \
     groupdyh.h \
     userdyh.h \
+    vucewidget.h \
     widget.h
 
 FORMS += \
+    vucewidget.ui \
     widget.ui
 
 # Default rules for deployment.
