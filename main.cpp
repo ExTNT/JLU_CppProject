@@ -2,7 +2,7 @@
 #include "vucewidget.h"
 #include "global.h"
 #include <QApplication>
-
+#include <QSqlDatabase>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -22,6 +22,10 @@ int main(int argc, char *argv[])
         qDebug("Open failed");
     }
 
+    qDebug()<<"available drivers:";
+    QStringList drivers = QSqlDatabase::drivers();
+    foreach(QString driver, drivers)
+    qDebug()<<driver;
 
     w.show();
     return a.exec();

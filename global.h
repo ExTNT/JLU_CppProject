@@ -5,6 +5,7 @@
 #include <QString>
 #include <iostream>
 #include <QDate>
+#include <QSqlDatabase>
 class userDYH;
 
 
