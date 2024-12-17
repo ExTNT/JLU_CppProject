@@ -4,9 +4,10 @@
 #include <QFile>
 #include <QString>
 #include <iostream>
+#include <string>
+#include <vector>
 #include <QDate>
 #include <QSqlDatabase>
-class userDYH;
 
 
 

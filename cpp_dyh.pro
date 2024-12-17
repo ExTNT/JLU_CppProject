@@ -9,16 +9,18 @@ CONFIG += c++17 mysql
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    groupdyh.cpp \
+    friendmanager_dyh.cpp \
     main.cpp \
-    userdyh.cpp \
+    service_dyh.cpp \
+    user_dyh.cpp \
     vucewidget.cpp \
     widget.cpp
 
 HEADERS += \
+    friendmanager_dyh.h \
     global.h \
-    groupdyh.h \
-    userdyh.h \
+    service_dyh.h \
+    user_dyh.h \
     vucewidget.h \
     widget.h
 
