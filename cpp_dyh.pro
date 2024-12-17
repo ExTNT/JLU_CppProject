@@ -10,6 +10,8 @@ CONFIG += c++17 mysql
 
 SOURCES += \
     friendmanager_dyh.cpp \
+    group_dyh.cpp \
+    groupmanager_dyh.cpp \
     main.cpp \
     service_dyh.cpp \
     user_dyh.cpp \
@@ -17,8 +19,11 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
+    classHeader.h \
     friendmanager_dyh.h \
     global.h \
+    group_dyh.h \
+    groupmanager_dyh.h \
     service_dyh.h \
     user_dyh.h \
     vucewidget.h \

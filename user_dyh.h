@@ -14,8 +14,9 @@ private:
     std::string location;               //所在地
 
     std::vector<std::string> friends;   //好友列表
-    std::vector<std::string> group;     //群列表
+    std::vector<std::string> groups;     //群列表
 public:
+    user_dyh();
     user_dyh(std::string id,std::string nickname,std::string brithday,std::string regTime,std::string location);
     ~user_dyh();
 
@@ -28,5 +29,16 @@ public:
     void joinGroup(const std::string& GroupId);
     void leaveGroup(const std::string& GroupId);
 };
+
+namespace std {
+template<>
+struct hash<user_dyh>
+{
+    std::size_t operator()(const user_dyh& user)
+        const{
+        return hash<std::string>()(user.getId());
+    }
+};
+}
 
 #endif // USER_DYH_H
