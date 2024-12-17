@@ -16,7 +16,8 @@ SOURCES += \
     service_dyh.cpp \
     user_dyh.cpp \
     vucewidget.cpp \
-    widget.cpp
+    widget.cpp \
+    writeAndRead.cpp
 
 HEADERS += \
     classHeader.h \
@@ -24,10 +25,12 @@ HEADERS += \
     global.h \
     group_dyh.h \
     groupmanager_dyh.h \
+    json.hpp \
     service_dyh.h \
     user_dyh.h \
     vucewidget.h \
-    widget.h
+    widget.h \
+    writeAndread.h
 
 FORMS += \
     vucewidget.ui \

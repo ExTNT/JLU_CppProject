@@ -12,8 +12,8 @@ private:
 
 public:
     FriendManager_dyh();
-    void addFriend(const std::string friendId,const user_dyh& user);
-    void delFriend(const std::string friendId,const user_dyh& user);
+    void addFriend(const std::string friendId, user_dyh& user);
+    void delFriend(const std::string friendId, user_dyh& user);
     user_dyh* findFriend(const std::string id);
 };
 
