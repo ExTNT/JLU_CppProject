@@ -5,24 +5,23 @@
 
 
 namespace Ui {
-class vuceWidget;
+    class vuceWidget;
 }
 
-class vuceWidget : public QWidget
-{
+class vuceWidget : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit vuceWidget(QWidget *parent = nullptr);
     ~vuceWidget();
     void LinkW(QWidget *p);
 
-private slots:
+  private slots:
     void on_qvxc_pbt_clicked();
 
-private:
-    Ui::vuceWidget *ui;
-    QWidget *w;
+  private:
+    Ui::vuceWidget* ui;
+    QWidget* w;
 };
 
 #endif // VUCEWIDGET_H

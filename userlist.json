@@ -1,0 +1,26 @@
+[
+    {
+        "brithday": "2001-01-01",
+        "friends": [
+            "10001"
+        ],
+        "groups": [],
+        "id": "10002",
+        "location": "杭州",
+        "nickname": "Jack Ma",
+        "password": "10002",
+        "registrationTime": "2008-01-01"
+    },
+    {
+        "brithday": "2001-01-01",
+        "friends": [
+            "10002"
+        ],
+        "groups": [],
+        "id": "10001",
+        "location": "南极",
+        "nickname": "Pony Ma",
+        "password": "10001",
+        "registrationTime": "2008-01-01"
+    }
+]

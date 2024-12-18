@@ -4,12 +4,11 @@
 #include<group_dyh.h>
 #include<unordered_map>
 
-class groupmanager_dyh
-{
-private:
-    std::unordered_map<std::string,group_dyh> groupList;
+class groupmanager_dyh {
+  private:
+    std::unordered_map<std::string, group_dyh> groupList;
 
-public:
+  public:
     groupmanager_dyh();
 };
 

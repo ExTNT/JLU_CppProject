@@ -6,24 +6,23 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class Widget;
+    class Widget;
 }
 QT_END_NAMESPACE
 
-class Widget : public QWidget
-{
+class Widget : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
     void LinkVuce(QWidget* p);
 
-private slots:
+  private slots:
     void on_vuce_pbt_clicked();
 
-private:
-    Ui::Widget *ui;
-    QWidget *vuce;
+  private:
+    Ui::Widget* ui;
+    QWidget* vuce;
 };
 #endif // WIDGET_H

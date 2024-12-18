@@ -7,9 +7,8 @@
 
 using json = nlohmann::json;
 
-class user_dyh
-{
-private:
+class user_dyh {
+  private:
     std::string id;                      //用户id
     std::string password;                //密码
     std::string nickname;                //昵称
@@ -19,9 +18,9 @@ private:
 
     std::vector<std::string> friends;    //好友列表
     std::vector<std::string> groups;     //群列表
-public:
+  public:
     user_dyh();
-    user_dyh(std::string id,std::string nickname,std::string brithday,std::string regTime,std::string location,std::string password);
+    user_dyh(std::string id, std::string nickname, std::string brithday, std::string regTime, std::string location, std::string password);
     ~user_dyh();
 
     std::string getId() const;
@@ -48,14 +47,13 @@ public:
 };
 
 namespace std {
-template<>
-struct hash<user_dyh>
-{
-    std::size_t operator()(const user_dyh& user)
-        const{
-        return hash<std::string>()(user.getId());
-    }
-};
+    template<>
+    struct hash<user_dyh> {
+        std::size_t operator()(const user_dyh& user)
+        const {
+            return hash<std::string>()(user.getId());
+        }
+    };
 }
 
 #endif // USER_DYH_H
