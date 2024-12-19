@@ -1,28 +1,28 @@
-#ifndef QQLOGIN_H
-#define QQLOGIN_H
+#ifndef WIDGET_H
+#define WIDGET_H
 
 #include <QWidget>
 
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    class QQLogin;
+    class Widget;
 }
 QT_END_NAMESPACE
 
-class QQLogin : public QWidget {
+class Widget : public QWidget {
     Q_OBJECT
 
   public:
-    QQLogin(QWidget *parent = nullptr);
-    ~QQLogin();
+    Widget(QWidget *parent = nullptr);
+    ~Widget();
     void LinkVuce(QWidget* p);
 
   private slots:
     void on_vuce_pbt_clicked();
 
   private:
-    Ui::QQLogin* ui;
+    Ui::Widget* ui;
     QWidget* vuce;
 };
-#endif // QQLOGIN_H
+#endif // WIDGET_H

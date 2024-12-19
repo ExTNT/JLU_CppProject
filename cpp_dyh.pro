@@ -1,8 +1,8 @@
-QT       += core gui network sql
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17 mysql
+CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -12,6 +12,7 @@ SOURCES += \
     QQLogin.cpp \
     QQSignUp.cpp \
     chooseservice.cpp \
+    errPassword2.cpp \
     friendmanager_dyh.cpp \
     group_dyh.cpp \
     groupmanager_dyh.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     QQSignUp.h \
     chooseservice.h \
     classHeader.h \
+    errPassword2.h \
     friendmanager_dyh.h \
     global.h \
     group_dyh.h \
@@ -37,7 +39,8 @@ HEADERS += \
 FORMS += \
     QQLogin.ui \
     QQSignUp.ui \
-    chooseservice.ui
+    chooseservice.ui \
+    errPassword2.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

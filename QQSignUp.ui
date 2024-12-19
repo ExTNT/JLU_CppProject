@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -137,14 +137,20 @@
        <number>20</number>
       </property>
       <item>
-       <widget class="QLabel" name="ojqrqs_lab">
+       <widget class="QLabel" name="location_lab">
+        <property name="minimumSize">
+         <size>
+          <width>40</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="text">
-         <string>安全问题:</string>
+         <string>住址:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="ojqrqs_ldt">
+       <widget class="QLineEdit" name="location_ldt">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -164,14 +170,20 @@
        <number>20</number>
       </property>
       <item>
-       <widget class="QLabel" name="ojqras_lab">
+       <widget class="QLabel" name="birth_lab">
+        <property name="minimumSize">
+         <size>
+          <width>40</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="text">
-         <string>问题答案:</string>
+         <string>生日:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="ojqras_ldt">
+       <widget class="QLineEdit" name="birth_ldt">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -185,7 +197,7 @@
     <item>
      <spacer name="verticalSpacer">
       <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
+       <enum>Qt::Vertical</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>

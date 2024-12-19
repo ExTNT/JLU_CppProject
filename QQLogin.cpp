@@ -3,23 +3,19 @@
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::Widget)
-{
+    , ui(new Ui::Widget) {
     ui->setupUi(this);
 }
 
-Widget::~Widget()
-{
+Widget::~Widget() {
     delete ui;
 }
 
-void Widget::LinkVuce(QWidget *p)
-{
-    vuce=p;
+void Widget::LinkVuce(QWidget *p) {
+    vuce = p;
 }
 
-void Widget::on_vuce_pbt_clicked()
-{
+void Widget::on_vuce_pbt_clicked() {
     this->hide();
     vuce->show();
 }

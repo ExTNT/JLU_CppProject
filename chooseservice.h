@@ -4,19 +4,23 @@
 #include <QWidget>
 
 namespace Ui {
-class chooseService;
+    class chooseService;
 }
 
-class chooseService : public QWidget
-{
+class chooseService : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit chooseService(QWidget *parent = nullptr);
     ~chooseService();
+    void linkToQQPage(QWidget* p);
 
-private:
-    Ui::chooseService *ui;
+  private slots:
+    void on_QQBtm_clicked();
+
+  private:
+    Ui::chooseService* ui;
+    QWidget* qqpage;
 };
 
 #endif // CHOOSESERVICE_H

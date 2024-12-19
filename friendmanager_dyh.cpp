@@ -32,10 +32,19 @@ void FriendManager_dyh::initUserList(std::unordered_map<std::string, user_dyh> a
     return;
 }
 
+void FriendManager_dyh::initIds(std::priority_queue<int, std::vector<int> > a) {
+    this->ids = a;
+    return;
+}
+
 void FriendManager_dyh::addUser(user_dyh& user) {
     this->userList.insert({user.getId(), user});
 }
 
 std::unordered_map<std::string, user_dyh> FriendManager_dyh::showUserls() const {
     return this->userList;
+}
+
+std::priority_queue<int, std::vector<int> > FriendManager_dyh::showIds() const {
+    return this->ids;
 }

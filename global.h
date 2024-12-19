@@ -4,7 +4,7 @@
 #include <QFile>
 #include <QString>
 #include <QDate>
-#include <QSqlDatabase>
+
 
 
 

@@ -2,7 +2,7 @@
 #include "friendmanager_dyh.h"
 #include <algorithm>
 
-extern FriendManager_dyh userls;
+extern FriendManager_dyh& userls;
 
 user_dyh::user_dyh(std::string id, std::string nickname, std::string brithday, std::string regTime, std::string location, std::string password): id(id), password(password), nickname(nickname), brithday(brithday), registrationTime(regTime), location(location) {}
 

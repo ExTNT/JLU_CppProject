@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include "json.hpp"
+#include <string>
 
 using json = nlohmann::json;
 
@@ -37,4 +38,24 @@ std::unordered_map<std::string, user_dyh> readUsersFromFile(const std::string& f
         userls.insert({temp.getId(), temp});
     }
     return userls;
+}
+
+std::priority_queue<int, std::vector<int> > readIdsFromFile(const std::string& filePath) {
+    std::priority_queue<int, std::vector<int> > ids;
+    std::ifstream inFile(filePath);
+    if (!inFile) {
+        std::cerr << "Error: Unable to open file for reading" << filePath << std::endl;
+        return ids;
+    }
+    json j;
+    inFile >> j;
+    inFile.close();
+    for (const auto& i : j) {
+        int temp;
+        std::string str;
+        i.at("id").get_to(str);
+        temp = std::stoi(str);
+        ids.push(temp);
+    }
+    return ids;
 }
