@@ -79,8 +79,32 @@ void user_dyh::fromJson(const json& j) {
     j.at("groups").get_to(groups);
 }
 
+json vxUser_dyh::toJson() const {
+    return json{
+        {"id", id},
+        {"password", password},
+        {"nickname", nickname},
+        {"brithday", brithday},
+        {"registrationTime", registrationTime},
+        {"location", location},
+        {"friends", friends},
+        {"groups", groups},
+        {"linkQQ", linkQQ}
+    };
+}
 
+void vxUser_dyh::fromJson(const json& j) {
+    j.at("id").get_to(id);
+    j.at("password").get_to(password);
+    j.at("nickname").get_to(nickname);
+    j.at("brithday").get_to(brithday);
+    j.at("registrationTime").get_to(registrationTime);
+    j.at("location").get_to(location);
+    j.at("friends").get_to(friends);
+    j.at("groups").get_to(groups);
+    j.at("linkQQ").get_to(linkQQ);
+}
 
-
-
-
+void vxUser_dyh::linkToQQ(const std::string qqid) {
+    this->linkQQ = qqid;
+}

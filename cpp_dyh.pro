@@ -9,17 +9,21 @@ CONFIG += c++17 mysql
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    QQLogin.cpp \
+    QQSignUp.cpp \
+    chooseservice.cpp \
     friendmanager_dyh.cpp \
     group_dyh.cpp \
     groupmanager_dyh.cpp \
     main.cpp \
     service_dyh.cpp \
     user_dyh.cpp \
-    vucewidget.cpp \
-    widget.cpp \
     writeAndRead.cpp
 
 HEADERS += \
+    QQLogin.h \
+    QQSignUp.h \
+    chooseservice.h \
     classHeader.h \
     friendmanager_dyh.h \
     global.h \
@@ -28,13 +32,12 @@ HEADERS += \
     json.hpp \
     service_dyh.h \
     user_dyh.h \
-    vucewidget.h \
-    widget.h \
     writeAndread.h
 
 FORMS += \
-    vucewidget.ui \
-    widget.ui
+    QQLogin.ui \
+    QQSignUp.ui \
+    chooseservice.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

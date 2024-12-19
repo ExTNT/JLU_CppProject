@@ -1,13 +1,16 @@
-#include "widget.h"
-#include "vucewidget.h"
+#include "QQLogin.h"
+#include "QQSignUp.h"
 #include "global.h"
 #include <QApplication>
 #include <QSqlDatabase>
 #include "friendmanager_dyh.h"
-#include "writeAndread.h"
+//#include "writeAndread.h"
 FriendManager_dyh userls;
 
-const std::string filePath = "D:\\CS\\QtProject\\cpp_dyh\\userlist.json";
+const std::string QQuserfile = "D:\\CS\\QtProject\\cpp_dyh\\QQuserlist.json";
+const std::string VXuserfile = "D:\\CS\\QtProject\\cpp_dyh\\VXuserlist.json";
+const std::string WBuserfile = "D:\\CS\\QtProject\\cpp_dyh\\WBuserlist.json";
+
 
 int main(int argc, char* argv[]) {
     QApplication a(argc, argv);
@@ -25,9 +28,5 @@ int main(int argc, char* argv[]) {
         qDebug("Open failed");
     }
     w.show();
-    userls.initUserList(readUsersFromFile(filePath));
-    user_dyh *a1 = userls.findFriend("10001");
-    a1->addFriend("10002");
-    writeUsersToFile(filePath, userls.showUserls());
     return a.exec();
 }

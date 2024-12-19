@@ -8,7 +8,7 @@
 using json = nlohmann::json;
 
 class user_dyh {
-  private:
+  protected:
     std::string id;                      //用户id
     std::string password;                //密码
     std::string nickname;                //昵称
@@ -32,6 +32,7 @@ class user_dyh {
 
     void setNickName(const std::string& newName);
     void setPassword(const std::string& newPswd);
+    void setRegsTime(const std::string& regTime);
 
     void addFriend(const std::string& friendId);
     void delFriend(const std::string& friendId);
@@ -40,10 +41,19 @@ class user_dyh {
     void leaveGroup(const std::string& GroupId);
 
     //序列化json
-    json toJson() const;
+    virtual json toJson() const;
     //从json反序列化
-    void fromJson(const json& j);
+    virtual void fromJson(const json& j);
 
+};
+
+class vxUser_dyh: public user_dyh {
+  private:
+    std::string linkQQ;         //qqid
+  public:
+    json toJson () const override;
+    void fromJson(const json& j) override;
+    void linkToQQ(const std::string qqid);
 };
 
 namespace std {

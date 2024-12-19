@@ -30,4 +30,11 @@ class WeChatService_dyh: public Service_dyh {
     void logout() override;
 };
 
+class WeiBoService_dyh: public Service_dyh {
+  public:
+    WeiBoService_dyh(): Service_dyh("WeiBo") {}
+    void login() override;
+    void logout() override;
+};
+
 #endif // SERVICE_DYH_H

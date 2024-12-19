@@ -43,7 +43,7 @@
      <item>
       <spacer name="verticalSpacer_2">
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -59,7 +59,7 @@
         <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
-           <enum>Qt::Orientation::Horizontal</enum>
+           <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -97,7 +97,7 @@
         <item>
          <spacer name="horizontalSpacer_2">
           <property name="orientation">
-           <enum>Qt::Orientation::Horizontal</enum>
+           <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -113,7 +113,7 @@
      <item>
       <spacer name="verticalSpacer">
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -184,7 +184,7 @@
      <item>
       <spacer name="verticalSpacer_3">
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -198,7 +198,7 @@
       <widget class="QPushButton" name="dglu_pbt">
        <property name="minimumSize">
         <size>
-         <width>0</width>
+         <width>338</width>
          <height>40</height>
         </size>
        </property>
@@ -211,7 +211,7 @@
       <widget class="QPushButton" name="vuce_pbt">
        <property name="minimumSize">
         <size>
-         <width>0</width>
+         <width>338</width>
          <height>40</height>
         </size>
        </property>

@@ -1,5 +1,5 @@
-#include "vucewidget.h"
-#include "ui_vucewidget.h"
+#include "QQSignUp.h"
+#include "ui_QQSignUp.h"
 
 vuceWidget::vuceWidget(QWidget *parent)
     : QWidget(parent)

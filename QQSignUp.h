@@ -1,5 +1,5 @@
-#ifndef VUCEWIDGET_H
-#define VUCEWIDGET_H
+#ifndef QQSIGNUP_H
+#define QQSIGNUP_H
 
 #include <QWidget>
 
@@ -24,4 +24,4 @@ class vuceWidget : public QWidget {
     QWidget* w;
 };
 
-#endif // VUCEWIDGET_H
+#endif // QQSIGNUP_H
