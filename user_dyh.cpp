@@ -22,6 +22,10 @@ std::vector<std::string> user_dyh::getGrps() const {
     return this->groups;
 }
 
+std::string user_dyh::getPassword() const {
+    return this->password;
+}
+
 std::vector<std::string>& user_dyh::giveFrds() {
     return this->friends;
 }

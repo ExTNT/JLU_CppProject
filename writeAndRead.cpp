@@ -13,12 +13,12 @@ void writeUsersToFile(const std::string& filePath, const std::unordered_map<std:
     }
     std::ofstream outFile(filePath);
     if (!outFile) {
-        std::cerr << "Error: Unable to open file for writing" << filePath << std::endl;
+        std::cerr << "Error: Unable to open file for writing " << filePath << std::endl;
         return;
     }
     outFile << j.dump(4);
     outFile.close();
-    std::cout << "Data sucessfully written to" << filePath << std::endl;
+    std::cout << "Data sucessfully written to " << filePath << std::endl;
     return;
 }
 
@@ -26,12 +26,13 @@ std::unordered_map<std::string, user_dyh> readUsersFromFile(const std::string& f
     std::unordered_map<std::string, user_dyh> userls;
     std::ifstream inFile(filePath);
     if (!inFile) {
-        std::cerr << "Error: Unable to open file for reading" << filePath << std::endl;
+        std::cerr << "Error: Unable to open file for reading " << filePath << std::endl;
         return userls;
     }
     json j;
     inFile >> j;
     inFile.close();
+    std::cout << "Data sucessfully read from " << filePath << std::endl;
     for (const auto& i : j) {
         user_dyh temp;
         temp.fromJson(i);
@@ -44,12 +45,13 @@ std::priority_queue<int, std::vector<int> > readIdsFromFile(const std::string& f
     std::priority_queue<int, std::vector<int> > ids;
     std::ifstream inFile(filePath);
     if (!inFile) {
-        std::cerr << "Error: Unable to open file for reading" << filePath << std::endl;
+        std::cerr << "Error: Unable to open file for reading " << filePath << std::endl;
         return ids;
     }
     json j;
     inFile >> j;
     inFile.close();
+    std::cout << "Data sucessfully read from " << filePath << std::endl;
     for (const auto& i : j) {
         int temp;
         std::string str;

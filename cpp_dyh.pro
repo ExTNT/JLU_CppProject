@@ -17,6 +17,8 @@ SOURCES += \
     group_dyh.cpp \
     groupmanager_dyh.cpp \
     main.cpp \
+    qqlogin_err.cpp \
+    qqsignup_err_name.cpp \
     service_dyh.cpp \
     user_dyh.cpp \
     writeAndRead.cpp
@@ -32,6 +34,8 @@ HEADERS += \
     group_dyh.h \
     groupmanager_dyh.h \
     json.hpp \
+    qqlogin_err.h \
+    qqsignup_err_name.h \
     service_dyh.h \
     user_dyh.h \
     writeAndread.h
@@ -40,7 +44,9 @@ FORMS += \
     QQLogin.ui \
     QQSignUp.ui \
     chooseservice.ui \
-    errPassword2.ui
+    errPassword2.ui \
+    qqlogin_err.ui \
+    qqsignup_err_name.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

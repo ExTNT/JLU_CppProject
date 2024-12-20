@@ -17,12 +17,19 @@ class Widget : public QWidget {
     Widget(QWidget *parent = nullptr);
     ~Widget();
     void LinkVuce(QWidget* p);
+    void LinkChoose(QWidget* p);
 
   private slots:
     void on_vuce_pbt_clicked();
 
+    void on_dglu_pbt_clicked();
+
+    void on_exitBtm_clicked();
+
   private:
     Ui::Widget* ui;
     QWidget* vuce;
+    QDialog* err;
+    QWidget* choose;
 };
 #endif // WIDGET_H

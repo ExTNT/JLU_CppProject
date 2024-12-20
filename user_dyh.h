@@ -26,6 +26,7 @@ class user_dyh {
     std::string getId() const;
     std::vector<std::string> getFrds() const;
     std::vector<std::string> getGrps() const;
+    std::string getPassword() const;
 
     std::vector<std::string>& giveFrds();
     std::vector<std::string>& giveGrps();
