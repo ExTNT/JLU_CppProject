@@ -3,6 +3,7 @@
 #include "service_dyh.h"
 #include "qqlogin_err.h"
 #include <string>
+#include "qqmain.h"
 
 extern QQService_dyh QQ;
 
@@ -26,6 +27,10 @@ void Widget::LinkChoose(QWidget* p) {
     choose = p;
 }
 
+void Widget::LinkMain(QWidget* p) {
+    mainWindow = p;
+}
+
 void Widget::on_vuce_pbt_clicked() {
     this->hide();
     vuce->show();
@@ -39,7 +44,10 @@ void Widget::on_dglu_pbt_clicked() {
     if (flag) {
         ui->mima_ldt->clear();
         ui->vhhk_ldt->clear();
-        exit(0);
+        this->hide();
+        auto p = (QQmain*)mainWindow;
+        p->setLab();
+        p->show();
     } else {
         ui->mima_ldt->clear();
         ui->vhhk_ldt->clear();

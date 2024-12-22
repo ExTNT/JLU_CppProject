@@ -26,6 +26,22 @@ std::string user_dyh::getPassword() const {
     return this->password;
 }
 
+const std::string user_dyh::getNickname() const {
+    return this->nickname;
+}
+
+std::string user_dyh::getBirth() const {
+    return this->brithday;
+}
+
+std::string user_dyh::getReg() const {
+    return this->registrationTime;
+}
+
+std::string user_dyh::getLocal() const {
+    return this->location;
+}
+
 std::vector<std::string>& user_dyh::giveFrds() {
     return this->friends;
 }
@@ -37,6 +53,19 @@ std::vector<std::string>& user_dyh::giveGrps() {
 void user_dyh::setNickName(const std::string& newName) {
     this->nickname = newName;
     return;
+}
+
+void user_dyh::setPassword(const std::string& newPswd) {
+    this->password = newPswd;
+    return;
+}
+
+void user_dyh::setBirthday(const std::string& newBirth) {
+    this->brithday = newBirth;
+}
+
+void user_dyh::setLocation(const std::string& newLocal) {
+    this->location = newLocal;
 }
 
 void user_dyh::addFriend(const std::string& friendId) {

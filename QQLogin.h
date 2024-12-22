@@ -18,6 +18,7 @@ class Widget : public QWidget {
     ~Widget();
     void LinkVuce(QWidget* p);
     void LinkChoose(QWidget* p);
+    void LinkMain(QWidget* p);
 
   private slots:
     void on_vuce_pbt_clicked();
@@ -31,5 +32,6 @@ class Widget : public QWidget {
     QWidget* vuce;
     QDialog* err;
     QWidget* choose;
+    QWidget* mainWindow;
 };
 #endif // WIDGET_H

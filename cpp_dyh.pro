@@ -17,7 +17,13 @@ SOURCES += \
     group_dyh.cpp \
     groupmanager_dyh.cpp \
     main.cpp \
+    qqchangedetail.cpp \
+    qqdetail.cpp \
+    qqfriendwindow.cpp \
     qqlogin_err.cpp \
+    qqmain.cpp \
+    qqresetpd_err.cpp \
+    qqresetpswd.cpp \
     qqsignup_err_name.cpp \
     service_dyh.cpp \
     user_dyh.cpp \
@@ -34,7 +40,13 @@ HEADERS += \
     group_dyh.h \
     groupmanager_dyh.h \
     json.hpp \
+    qqchangedetail.h \
+    qqdetail.h \
+    qqfriendwindow.h \
     qqlogin_err.h \
+    qqmain.h \
+    qqresetpd_err.h \
+    qqresetpswd.h \
     qqsignup_err_name.h \
     service_dyh.h \
     user_dyh.h \
@@ -45,7 +57,13 @@ FORMS += \
     QQSignUp.ui \
     chooseservice.ui \
     errPassword2.ui \
+    qqchangedetail.ui \
+    qqdetail.ui \
+    qqfriendwindow.ui \
     qqlogin_err.ui \
+    qqmain.ui \
+    qqresetpd_err.ui \
+    qqresetpswd.ui \
     qqsignup_err_name.ui
 
 # Default rules for deployment.

@@ -31,7 +31,7 @@
      <x>0</x>
      <y>0</y>
      <width>401</width>
-     <height>561</height>
+     <height>569</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -57,6 +57,12 @@
       </property>
       <item>
        <widget class="QLabel" name="name_lab">
+        <property name="font">
+         <font>
+          <family>Noto Sans Mono CJK SC</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>用户名:</string>
         </property>
@@ -67,7 +73,7 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>40</height>
          </size>
         </property>
        </widget>
@@ -84,6 +90,12 @@
       </property>
       <item>
        <widget class="QLabel" name="mima_lab">
+        <property name="font">
+         <font>
+          <family>Noto Sans Mono CJK SC</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>密码:</string>
         </property>
@@ -94,7 +106,7 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>40</height>
          </size>
         </property>
        </widget>
@@ -111,6 +123,12 @@
       </property>
       <item>
        <widget class="QLabel" name="qvrf_lab">
+        <property name="font">
+         <font>
+          <family>Noto Sans Mono CJK SC</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>确认密码:</string>
         </property>
@@ -121,7 +139,7 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>40</height>
          </size>
         </property>
        </widget>
@@ -144,6 +162,12 @@
           <height>0</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Noto Sans Mono CJK SC</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>住址:</string>
         </property>
@@ -154,7 +178,7 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>40</height>
          </size>
         </property>
        </widget>
@@ -177,20 +201,45 @@
           <height>0</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Noto Sans Mono CJK SC</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>生日:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="birth_ldt">
+       <widget class="QDateEdit" name="dateEdit">
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>40</height>
          </size>
         </property>
+        <property name="displayFormat">
+         <string>yyyy-MM-dd</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
        </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </item>

@@ -743,7 +743,6 @@ QAbstractSpinBox::down-arrow:hover
 
 QLabel
 {
-    font-family: "Microsoft YaHei";
     border: 0px solid black;
     margin-left: 2px;
     margin-right: 2px;
@@ -1263,7 +1262,7 @@ QDateEdit
     border: 1px solid #CEE343;
     border-radius: 2px;
     padding: 1px;
-    min-width: 75px;
+    min-width: 200px;
 }
 
 QDateEdit:on

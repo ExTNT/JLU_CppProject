@@ -5,6 +5,10 @@
 #include "global.h"
 #include "writeAndread.h"
 #include "service_dyh.h"
+#include "qqmain.h"
+#include "qqdetail.h"
+#include "qqchangedetail.h"
+#include "qqresetpswd.h"
 #include <QApplication>
 #include <vector>
 #include <queue>
@@ -32,13 +36,29 @@ QQService_dyh QQ;
 
 int main(int argc, char* argv[]) {
     QApplication a(argc, argv);
+    //实例化各页面
     chooseService chS;
     Widget w;
     vuceWidget vuce_w;
+    QQmain qqmain;
+    QQDetail qqdetail;
+    QQchangedetail qqcdtl;
+    QQResetPswd qqrspd;
+    //连接各页面
     chS.linkToQQPage(&w);
+    chS.linkQQmain(&qqmain);
     w.LinkVuce(&vuce_w);
     w.LinkChoose(&chS);
+    w.LinkMain(&qqmain);
     vuce_w.LinkW(&w);
+    qqmain.LinkChoose(&chS);
+    qqmain.LinkDetail(&qqdetail);
+    qqdetail.LinkMainWindow(&qqmain);
+    qqdetail.LinkchangeDetai(&qqcdtl);
+    qqdetail.LinkResetpd(&qqrspd);
+    qqcdtl.LinkQQdetail(&qqdetail);
+    qqrspd.LinkQQDetail(&qqdetail);
+    //读取样式表
     QFile qss(":/qdarkgraystyle/style.qss");
     if (qss.open(QFile::ReadOnly)) {
         qDebug("open success");

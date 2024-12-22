@@ -19,6 +19,7 @@ vuceWidget::vuceWidget(QWidget *parent)
     ui->setupUi(this);
     err = new Dialog(this);
     err_name = new QQSignUp_err_name(this);
+    ui->dateEdit->setMaximumDate(QDate::currentDate());
 }
 
 vuceWidget::~vuceWidget() {
@@ -40,7 +41,7 @@ void vuceWidget::on_vuce_pbt_clicked() {
         ui->name_ldt->clear();
         ui->mima_ldt->clear();
         ui->qvrf_ldt->clear();
-        ui->birth_ldt->clear();
+        ui->dateEdit->clear();
         ui->location_ldt->clear();
         err_name->show();
         return;
@@ -49,7 +50,7 @@ void vuceWidget::on_vuce_pbt_clicked() {
         ui->name_ldt->clear();
         ui->mima_ldt->clear();
         ui->qvrf_ldt->clear();
-        ui->birth_ldt->clear();
+        ui->dateEdit->clear();
         ui->location_ldt->clear();
         err->show();
         return;
@@ -59,7 +60,7 @@ void vuceWidget::on_vuce_pbt_clicked() {
     std::string sid = std::to_string(id);
     std::string nickname = ui->name_ldt->text().toStdString();
     std::string password = ui->mima_ldt->text().toStdString();
-    std::string birthday = ui->birth_ldt->text().toStdString();
+    std::string birthday = ui->dateEdit->date().toString("yyyy-MM-dd").toStdString();
     std::string location = ui->location_ldt->text().toStdString();
     QDateTime curTime = QDateTime::currentDateTime();
     std::string regTime = curTime.toString("yyyy-MM-dd").toStdString();
@@ -69,7 +70,7 @@ void vuceWidget::on_vuce_pbt_clicked() {
     ui->name_ldt->clear();
     ui->mima_ldt->clear();
     ui->qvrf_ldt->clear();
-    ui->birth_ldt->clear();
+    ui->dateEdit->clear();
     ui->location_ldt->clear();
     this->hide();
     w->show();

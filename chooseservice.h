@@ -14,6 +14,7 @@ class chooseService : public QWidget {
     explicit chooseService(QWidget *parent = nullptr);
     ~chooseService();
     void linkToQQPage(QWidget* p);
+    void linkQQmain(QWidget* p);
 
   private slots:
     void on_QQBtm_clicked();
@@ -21,6 +22,7 @@ class chooseService : public QWidget {
   private:
     Ui::chooseService* ui;
     QWidget* qqpage;
+    QWidget* qqmain;
 };
 
 #endif // CHOOSESERVICE_H

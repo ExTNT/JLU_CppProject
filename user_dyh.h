@@ -27,13 +27,19 @@ class user_dyh {
     std::vector<std::string> getFrds() const;
     std::vector<std::string> getGrps() const;
     std::string getPassword() const;
+    const std::string getNickname() const;
+    std::string getBirth() const;
+    std::string getReg() const;
+    std::string getLocal() const;
 
     std::vector<std::string>& giveFrds();
     std::vector<std::string>& giveGrps();
 
     void setNickName(const std::string& newName);
     void setPassword(const std::string& newPswd);
-    void setRegsTime(const std::string& regTime);
+    //void setRegsTime(const std::string& regTime);
+    void setBirthday(const std::string& newBirth);
+    void setLocation(const std::string& newLocal);
 
     void addFriend(const std::string& friendId);
     void delFriend(const std::string& friendId);
