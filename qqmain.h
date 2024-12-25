@@ -16,6 +16,7 @@ class QQmain : public QWidget {
     void setLab();
     void LinkChoose(QWidget* p);
     void LinkDetail(QWidget* p);
+    void LinkFriend(QWidget* p);
 
   private slots:
     void on_detailBtm_clicked();
@@ -24,10 +25,13 @@ class QQmain : public QWidget {
 
     void on_changeBtm_clicked();
 
+    void on_friendBtm_clicked();
+
   private:
     Ui::QQmain* ui;
     QWidget* choose;
     QWidget* details;
+    QWidget* Friends;
 };
 
 #endif // QQMAIN_H

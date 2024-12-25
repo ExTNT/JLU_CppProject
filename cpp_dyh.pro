@@ -13,10 +13,13 @@ SOURCES += \
     QQSignUp.cpp \
     chooseservice.cpp \
     errPassword2.cpp \
+    frienditem.cpp \
+    frienditem_detial.cpp \
     friendmanager_dyh.cpp \
     group_dyh.cpp \
     groupmanager_dyh.cpp \
     main.cpp \
+    nonefriend_err.cpp \
     qqchangedetail.cpp \
     qqdetail.cpp \
     qqfriendwindow.cpp \
@@ -35,11 +38,14 @@ HEADERS += \
     chooseservice.h \
     classHeader.h \
     errPassword2.h \
+    frienditem.h \
+    frienditem_detial.h \
     friendmanager_dyh.h \
     global.h \
     group_dyh.h \
     groupmanager_dyh.h \
     json.hpp \
+    nonefriend_err.h \
     qqchangedetail.h \
     qqdetail.h \
     qqfriendwindow.h \
@@ -57,6 +63,9 @@ FORMS += \
     QQSignUp.ui \
     chooseservice.ui \
     errPassword2.ui \
+    frienditem.ui \
+    frienditem_detial.ui \
+    nonefriend_err.ui \
     qqchangedetail.ui \
     qqdetail.ui \
     qqfriendwindow.ui \

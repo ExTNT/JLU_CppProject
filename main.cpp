@@ -9,6 +9,7 @@
 #include "qqdetail.h"
 #include "qqchangedetail.h"
 #include "qqresetpswd.h"
+#include "qqfriendwindow.h"
 #include <QApplication>
 #include <vector>
 #include <queue>
@@ -44,6 +45,7 @@ int main(int argc, char* argv[]) {
     QQDetail qqdetail;
     QQchangedetail qqcdtl;
     QQResetPswd qqrspd;
+    QQFriendWindow qqfw;
     //连接各页面
     chS.linkToQQPage(&w);
     chS.linkQQmain(&qqmain);
@@ -53,21 +55,23 @@ int main(int argc, char* argv[]) {
     vuce_w.LinkW(&w);
     qqmain.LinkChoose(&chS);
     qqmain.LinkDetail(&qqdetail);
+    qqmain.LinkFriend(&qqfw);
     qqdetail.LinkMainWindow(&qqmain);
     qqdetail.LinkchangeDetai(&qqcdtl);
     qqdetail.LinkResetpd(&qqrspd);
     qqcdtl.LinkQQdetail(&qqdetail);
     qqrspd.LinkQQDetail(&qqdetail);
+    qqfw.LinkMain(&qqmain);
     //读取样式表
-    QFile qss(":/qdarkgraystyle/style.qss");
-    if (qss.open(QFile::ReadOnly)) {
-        qDebug("open success");
-        QString style = QLatin1String(qss.readAll());
-        a.setStyleSheet(style);
-        qss.close();
-    } else {
-        qDebug("Open failed");
-    }
+    // QFile qss(":/qdarkgraystyle/style.qss");
+    // if (qss.open(QFile::ReadOnly)) {
+    //     qDebug("open success");
+    //     QString style = QLatin1String(qss.readAll());
+    //     a.setStyleSheet(style);
+    //     qss.close();
+    // } else {
+    //     qDebug("Open failed");
+    // }
     QQuserls.initUserList(readUsersFromFile(QQUserfile));
     QQuserls.initIds(readIdsFromFile(QQUserfile));
     chS.show();

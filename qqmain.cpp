@@ -2,8 +2,9 @@
 #include "ui_qqmain.h"
 #include "user_dyh.h"
 #include "qqdetail.h"
+#include "qqfriendwindow.h"
 #include <iostream>
-#include<QString>
+#include <QString>
 
 extern user_dyh* CurUser;
 
@@ -49,5 +50,18 @@ void QQmain::on_changeBtm_clicked() {
     this->hide();
     choose->show();
     std::cout << "qq not exit, wait for other service to run" << std::endl;
+}
+
+void QQmain::LinkFriend(QWidget*p) {
+    Friends = p;
+}
+
+
+void QQmain::on_friendBtm_clicked() {
+    this->hide();
+    auto p = (QQFriendWindow*)Friends;
+    p->initLab();
+    p->initList();
+    p->show();
 }
 
