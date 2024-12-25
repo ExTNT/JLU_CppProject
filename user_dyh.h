@@ -44,6 +44,8 @@ class user_dyh {
     void addFriend(const std::string& friendId);
     void delFriend(const std::string& friendId);
 
+    void creatGroup();
+    void delGroup();
     void joinGroup(const std::string& GroupId);
     void leaveGroup(const std::string& GroupId);
 

@@ -6,25 +6,24 @@
 class group_dyh {
   private:
     std::string groupId;
-    std::string groupName;
+    std::string groupOnwer;
     std::vector <std::string> members;
 
   public:
     group_dyh();
     std::string getId() const;
+    bool isOwner(const std::string userid);
     void addmember(const std::string& userid);
     void delmember(const std::string& userid);
-    bool ismember(const std::string& userid) const;
 };
 
 class QQGroup_dyh: public group_dyh {
   private:
     std::vector<std::string> admins;
-    std::string groupOwner;
+
 
   public:
     QQGroup_dyh() {}
-    bool isOwner(const std::string userid);
     bool isAdmin(const std::string userid);
     void addAdmin(const std::string userid);
     void delAdmin(const std::string userid);
@@ -32,7 +31,6 @@ class QQGroup_dyh: public group_dyh {
 
 class WeChatGroup_dyh: public group_dyh {
   private:
-    std::string groupOwner;
 
   public:
     WeChatGroup_dyh() {}
