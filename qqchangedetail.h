@@ -24,6 +24,7 @@ class QQchangedetail : public QWidget {
   private:
     Ui::QQchangedetail* ui;
     QWidget* qqdetail;
+    QDialog* noname;
 };
 
 #endif // QQCHANGEDETAIL_H

@@ -1,10 +1,17 @@
 #include "user_dyh.h"
 #include "friendmanager_dyh.h"
+#include "group_dyh.h"
+#include "groupmanager_dyh.h"
 #include <algorithm>
+#include <string>
+#include <iostream>
 
 extern FriendManager_dyh& userls;
+extern QQgroupmanager_dyh QQgroupls;
 
 user_dyh::user_dyh(std::string id, std::string nickname, std::string brithday, std::string regTime, std::string location, std::string password): id(id), password(password), nickname(nickname), brithday(brithday), registrationTime(regTime), location(location) {}
+
+vxUser_dyh::vxUser_dyh(std::string id, std::string nickname, std::string brithday, std::string regTime, std::string location, std::string password): user_dyh(id,  nickname,  brithday,  regTime,  location,  password), linkQQ("") {}
 
 user_dyh::user_dyh() = default;
 
@@ -80,11 +87,16 @@ void user_dyh::delFriend(const std::string& friendId) {
 
 void user_dyh::joinGroup(const std::string& groupId) {
     this->groups.push_back(groupId);
+    QQGroup_dyh* target = QQgroupls.find(groupId);
+    target->addmember(this->id);
     return;
 }
 
+
 void user_dyh::leaveGroup(const std::string& groupId) {
     this->groups.erase(std::find(this->groups.begin(), this->groups.end(), groupId));
+    QQGroup_dyh* target = QQgroupls.find(groupId);
+    target->delmember(this->id);
     return;
 }
 
@@ -140,4 +152,18 @@ void vxUser_dyh::fromJson(const json& j) {
 
 void vxUser_dyh::linkToQQ(const std::string qqid) {
     this->linkQQ = qqid;
+}
+
+void user_dyh::creatGroup() {
+    QQGroup_dyh temp;
+    temp.setID(std::to_string(QQgroupls.showids().top() + 1));
+    QQgroupls.showids().push(QQgroupls.showids().top() + 1);
+    temp.setOwner(this->id);
+    temp.givemembers().push_back(this->getId());
+    QQgroupls.showgroups().insert({temp.getId(), temp});
+    this->groups.push_back(temp.getId());
+}
+
+std::string& vxUser_dyh::giveQQ() {
+    return this->linkQQ;
 }

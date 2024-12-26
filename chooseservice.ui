@@ -22,7 +22,7 @@
      <height>560</height>
     </rect>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -164,7 +164,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="WBBtm">
+      <widget class="QPushButton" name="exitBtm">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -177,7 +177,7 @@
         </font>
        </property>
        <property name="text">
-        <string>微博</string>
+        <string>退出程序</string>
        </property>
       </widget>
      </item>

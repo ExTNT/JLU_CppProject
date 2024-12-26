@@ -60,9 +60,12 @@ class vxUser_dyh: public user_dyh {
   private:
     std::string linkQQ;         //qqid
   public:
+    vxUser_dyh() {};
+    vxUser_dyh(std::string id, std::string nickname, std::string brithday, std::string regTime, std::string location, std::string password);
     json toJson () const override;
     void fromJson(const json& j) override;
     void linkToQQ(const std::string qqid);
+    std::string& giveQQ();
 };
 
 namespace std {

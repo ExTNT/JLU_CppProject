@@ -15,14 +15,23 @@ class chooseService : public QWidget {
     ~chooseService();
     void linkToQQPage(QWidget* p);
     void linkQQmain(QWidget* p);
-
+    void linkToVXPage(QWidget* p);
+    void linkVXmain(QWidget* p);
+    void linkApp(QApplication* p);
   private slots:
     void on_QQBtm_clicked();
+
+    void on_VXBtm_clicked();
+
+    void on_exitBtm_clicked();
 
   private:
     Ui::chooseService* ui;
     QWidget* qqpage;
     QWidget* qqmain;
+    QWidget* vxpage;
+    QWidget* vxmain;
+    QApplication* app;
 };
 
 #endif // CHOOSESERVICE_H

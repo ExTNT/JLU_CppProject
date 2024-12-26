@@ -26,4 +26,3 @@ void friendItem_detial::on_pushButton_clicked() {
     this->close();
     delete this;
 }
-

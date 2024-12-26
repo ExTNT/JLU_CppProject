@@ -23,4 +23,20 @@ class FriendManager_dyh {
     std::priority_queue<int, std::vector<int> >showIds() const;
 };
 
+class VXFriendManager_dyh {
+  private:
+    std::unordered_map<std::string, vxUser_dyh> userList;       //用户列表
+    std::priority_queue<int, std::vector<int> > ids;          //账号表
+  public:
+    VXFriendManager_dyh();
+    void addFriend(const std::string friendId, user_dyh& user);
+    void delFriend(const std::string friendId, user_dyh& user);
+    vxUser_dyh* findFriend(const std::string id);
+    void initUserList(std::unordered_map<std::string, vxUser_dyh> a);
+    void initIds(std::priority_queue<int, std::vector<int> > a);
+    void addUser(vxUser_dyh& user);
+    std::unordered_map<std::string, vxUser_dyh> showUserls() const;
+    std::priority_queue<int, std::vector<int> >showIds() const;
+};
+
 #endif // FRIENDMANAGER_DYH_H

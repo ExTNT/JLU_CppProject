@@ -27,6 +27,7 @@ class vuceWidget : public QWidget {
     Ui::vuceWidget* ui;
     QWidget* w;
     QDialog* err;
+    QDialog* r;
     QDialog* err_name;
 };
 

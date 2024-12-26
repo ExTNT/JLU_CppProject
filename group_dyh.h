@@ -2,19 +2,32 @@
 #define GROUP_DYH_H
 #include<string>
 #include<vector>
+#include"json.hpp"
+
+using json = nlohmann::json;
 
 class group_dyh {
-  private:
+  protected:
     std::string groupId;
-    std::string groupOnwer;
+    std::string groupOwner;
     std::vector <std::string> members;
 
   public:
     group_dyh();
     std::string getId() const;
-    bool isOwner(const std::string userid);
+    std::string getOwner() const;
+
+    void setID(const std::string&);
+    void setOwner(const std::string&);
+
+    std::vector<std::string>& givemembers();
+
+    bool isOwner(const std::string& userid);
     void addmember(const std::string& userid);
     void delmember(const std::string& userid);
+
+    virtual json toJson() const = 0;
+    virtual void fromJson(const json& j) = 0;
 };
 
 class QQGroup_dyh: public group_dyh {
@@ -27,6 +40,8 @@ class QQGroup_dyh: public group_dyh {
     bool isAdmin(const std::string userid);
     void addAdmin(const std::string userid);
     void delAdmin(const std::string userid);
+    json toJson() const override;
+    void fromJson(const json& j) override;
 };
 
 class WeChatGroup_dyh: public group_dyh {
@@ -34,6 +49,8 @@ class WeChatGroup_dyh: public group_dyh {
 
   public:
     WeChatGroup_dyh() {}
+    json toJson() const override;
+    void fromJson(const json& j) override;
     void recommendAdd(const std::string userid);
 };
 

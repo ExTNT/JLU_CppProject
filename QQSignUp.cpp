@@ -5,6 +5,7 @@
 #include "writeAndread.h"
 #include "errPassword2.h"
 #include "qqsignup_err_name.h"
+#include "remember.h"
 #include <string>
 #include <QString>
 #include <QDateTime>
@@ -19,6 +20,7 @@ vuceWidget::vuceWidget(QWidget *parent)
     ui->setupUi(this);
     err = new Dialog(this);
     err_name = new QQSignUp_err_name(this);
+    r = new remember(this);
     ui->dateEdit->setMaximumDate(QDate::currentDate());
 }
 
@@ -67,11 +69,17 @@ void vuceWidget::on_vuce_pbt_clicked() {
     temp = new user_dyh(sid, nickname, birthday, regTime, location, password);
     userls.addUser(*temp);
     writeUsersToFile(QQUserfile, userls.showUserls());
+    userls.initUserList(readUsersFromFile(QQUserfile));
+    userls.initIds(readIdsFromFile(QQUserfile));
     ui->name_ldt->clear();
     ui->mima_ldt->clear();
     ui->qvrf_ldt->clear();
     ui->dateEdit->clear();
     ui->location_ldt->clear();
+    auto p = (remember*)r;
+    p->LinkUser(temp);
+    p->initLab();
+    p->show();
     this->hide();
     w->show();
     return;

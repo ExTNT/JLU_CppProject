@@ -5,6 +5,7 @@
 #include "qqfriendwindow.h"
 #include <iostream>
 #include <QString>
+#include "qqgroupwindow.h"
 
 extern user_dyh* CurUser;
 
@@ -56,10 +57,22 @@ void QQmain::LinkFriend(QWidget*p) {
     Friends = p;
 }
 
+void QQmain::LinkGroups(QWidget* p) {
+    Groups = p;
+}
 
 void QQmain::on_friendBtm_clicked() {
     this->hide();
     auto p = (QQFriendWindow*)Friends;
+    p->initLab();
+    p->initList();
+    p->show();
+}
+
+
+void QQmain::on_groupBtm_clicked() {
+    this->hide();
+    auto p = (QQgroupwindow*)Groups;
     p->initLab();
     p->initList();
     p->show();

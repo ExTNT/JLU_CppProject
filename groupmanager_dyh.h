@@ -10,17 +10,19 @@
 
 
 
-class groupmanager_dyh {
+class QQgroupmanager_dyh {
   private:
-    std::unordered_map<std::string, group_dyh> groupList;
+    std::unordered_map<std::string, QQGroup_dyh> groupList;
     std::priority_queue<int, std::vector<int> > ids;
   public:
-    groupmanager_dyh();
-    void initGpList(std::unordered_map<std::string, group_dyh>);
+    QQgroupmanager_dyh() = default;
+    void initGpList(std::unordered_map<std::string, QQGroup_dyh>);
     void initIds(std::priority_queue<int, std::vector<int> >);
-    group_dyh* find(std::string id);
-    void addgroup(group_dyh&);
-    void delgroup(group_dyh&);
+    QQGroup_dyh* find(std::string id);
+
+    std::unordered_map<std::string, QQGroup_dyh>& showgroups();
+    std::priority_queue<int, std::vector<int> >& showids();
+    std::unordered_map<std::string, QQGroup_dyh>giveGroups() const;
 
 };
 
