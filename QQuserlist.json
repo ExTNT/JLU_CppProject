@@ -1,19 +1,22 @@
 [
     {
-        "brithday": "2001-06-08",
+        "brithday": "2001-01-07",
         "friends": [
             "10002",
             "10001"
         ],
-        "groups": [],
-        "id": "10006",
+        "groups": [
+            "10001",
+            "10002"
+        ],
+        "id": "10005",
         "location": "USA",
-        "nickname": "Bill",
+        "nickname": "Van",
         "password": "123456",
         "registrationTime": "2024-12-19"
     },
     {
-        "brithday": "1954-04-07",
+        "brithday": "2005-05-20",
         "friends": [
             "10002",
             "10001"
@@ -22,29 +25,23 @@
             "10001",
             "10002"
         ],
-        "id": "10003",
-        "location": "China",
-        "nickname": "Jackie Chan",
+        "id": "10004",
+        "location": "长春",
+        "nickname": "张博",
         "password": "123456",
         "registrationTime": "2024-12-19"
     },
     {
-        "brithday": "2001-01-01",
-        "friends": [
-            "10003",
-            "10004",
-            "10005",
+        "brithday": "2000-04-20",
+        "friends": [],
+        "groups": [
             "10001"
         ],
-        "groups": [
-            "10001",
-            "10002"
-        ],
-        "id": "10002",
-        "location": "杭州",
-        "nickname": "Jack Ma",
-        "password": "10002",
-        "registrationTime": "2008-01-01"
+        "id": "10007",
+        "location": "USA",
+        "nickname": "zy",
+        "password": "123456",
+        "registrationTime": "2024-12-26"
     },
     {
         "brithday": "2001-01-25",
@@ -66,19 +63,25 @@
         "registrationTime": "2008-01-01"
     },
     {
-        "brithday": "2000-04-20",
-        "friends": [],
-        "groups": [
+        "brithday": "2001-01-01",
+        "friends": [
+            "10003",
+            "10004",
+            "10005",
             "10001"
         ],
-        "id": "10007",
-        "location": "USA",
-        "nickname": "zy",
-        "password": "123456",
-        "registrationTime": "2024-12-26"
+        "groups": [
+            "10001",
+            "10002"
+        ],
+        "id": "10002",
+        "location": "杭州",
+        "nickname": "Jack Ma",
+        "password": "10002",
+        "registrationTime": "2008-01-01"
     },
     {
-        "brithday": "2005-05-20",
+        "brithday": "1954-04-07",
         "friends": [
             "10002",
             "10001"
@@ -87,25 +90,22 @@
             "10001",
             "10002"
         ],
-        "id": "10004",
-        "location": "长春",
-        "nickname": "张博",
+        "id": "10003",
+        "location": "China",
+        "nickname": "Jackie Chan",
         "password": "123456",
         "registrationTime": "2024-12-19"
     },
     {
-        "brithday": "2001-01-07",
+        "brithday": "2001-06-08",
         "friends": [
             "10002",
             "10001"
         ],
-        "groups": [
-            "10001",
-            "10002"
-        ],
-        "id": "10005",
+        "groups": [],
+        "id": "10006",
         "location": "USA",
-        "nickname": "Van",
+        "nickname": "Bill",
         "password": "123456",
         "registrationTime": "2024-12-19"
     }
