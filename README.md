@@ -19,7 +19,7 @@
 ## 使用方法
 
 1. 使用Qt打开此项目的 `cpp_dyh.pro`
-2. 随便选一个构建套件, 然后点击 `Configure Project` 按钮
+2. 随便选一个构建套件, 然后点击 `Configure Project` 按钮 *(推荐使用 `MinGW 11.2.0 64-bit` ,因为ExTNT使用的此套件)*
 3. 按下 `Ctrl + B`, 然后按下 `Crtl + R`
 4. 恭喜你, 现在项目开始运行了
 
