@@ -6,13 +6,16 @@
 
 using json = nlohmann::json;
 
-void writeUsersToFile(const std::string& filePath, const std::unordered_map<std::string, user_dyh>& userls) {
+void writeUsersToFile(const std::string &filePath, const std::unordered_map<std::string, user_name> &userls)
+{
     json j;
-    for (const auto& i : userls) {
+    for (const auto &i : userls)
+    {
         j.push_back(i.second.toJson());
     }
     std::ofstream outFile(filePath);
-    if (!outFile) {
+    if (!outFile)
+    {
         std::cerr << "Error: Unable to open file for writing " << filePath << std::endl;
         return;
     }
@@ -22,13 +25,16 @@ void writeUsersToFile(const std::string& filePath, const std::unordered_map<std:
     return;
 }
 
-void writeVsersToFile(const std::string& filePath, const std::unordered_map<std::string, vxUser_dyh>& vserls) {
+void writeVsersToFile(const std::string &filePath, const std::unordered_map<std::string, vxUser_name> &vserls)
+{
     json j;
-    for (const auto& i : vserls) {
+    for (const auto &i : vserls)
+    {
         j.push_back(i.second.toJson());
     }
     std::ofstream outFile(filePath);
-    if (!outFile) {
+    if (!outFile)
+    {
         std::cerr << "Error: Unable to open file for writing " << filePath << std::endl;
         return;
     }
@@ -38,13 +44,16 @@ void writeVsersToFile(const std::string& filePath, const std::unordered_map<std:
     return;
 }
 
-void writeGroupsToFile(const std::string& filePath, const std::unordered_map<std::string, QQGroup_dyh>& groupls) {
+void writeGroupsToFile(const std::string &filePath, const std::unordered_map<std::string, QQGroup_name> &groupls)
+{
     json j;
-    for (const auto& i : groupls) {
+    for (const auto &i : groupls)
+    {
         j.push_back(i.second.toJson());
     }
     std::ofstream outFile(filePath);
-    if (!outFile) {
+    if (!outFile)
+    {
         std::cerr << "Error: Unable to open file for writing " << filePath << std::endl;
         return;
     }
@@ -54,10 +63,12 @@ void writeGroupsToFile(const std::string& filePath, const std::unordered_map<std
     return;
 }
 
-std::unordered_map < std::string, QQGroup_dyh> readGroupsFromFile(const std::string& filePath) {
-    std::unordered_map < std::string, QQGroup_dyh> groupls;
+std::unordered_map<std::string, QQGroup_name> readGroupsFromFile(const std::string &filePath)
+{
+    std::unordered_map<std::string, QQGroup_name> groupls;
     std::ifstream inFile(filePath);
-    if (!inFile) {
+    if (!inFile)
+    {
         std::cerr << "Error: Unable to open file for reading " << filePath << std::endl;
         return groupls;
     }
@@ -65,18 +76,21 @@ std::unordered_map < std::string, QQGroup_dyh> readGroupsFromFile(const std::str
     inFile >> j;
     inFile.close();
     std::cout << "Data sucessfully read from " << filePath << std::endl;
-    for (const auto& i : j) {
-        QQGroup_dyh temp;
+    for (const auto &i : j)
+    {
+        QQGroup_name temp;
         temp.fromJson(i);
         groupls.insert({temp.getId(), temp});
     }
     return groupls;
 }
 
-std::unordered_map<std::string, user_dyh> readUsersFromFile(const std::string& filePath) {
-    std::unordered_map<std::string, user_dyh> userls;
+std::unordered_map<std::string, user_name> readUsersFromFile(const std::string &filePath)
+{
+    std::unordered_map<std::string, user_name> userls;
     std::ifstream inFile(filePath);
-    if (!inFile) {
+    if (!inFile)
+    {
         std::cerr << "Error: Unable to open file for reading " << filePath << std::endl;
         return userls;
     }
@@ -84,18 +98,21 @@ std::unordered_map<std::string, user_dyh> readUsersFromFile(const std::string& f
     inFile >> j;
     inFile.close();
     std::cout << "Data sucessfully read from " << filePath << std::endl;
-    for (const auto& i : j) {
-        user_dyh temp;
+    for (const auto &i : j)
+    {
+        user_name temp;
         temp.fromJson(i);
         userls.insert({temp.getId(), temp});
     }
     return userls;
 }
 
-std::unordered_map<std::string, vxUser_dyh> readVsersFromFile(const std::string& filePath) {
-    std::unordered_map<std::string, vxUser_dyh> vserls;
+std::unordered_map<std::string, vxUser_name> readVsersFromFile(const std::string &filePath)
+{
+    std::unordered_map<std::string, vxUser_name> vserls;
     std::ifstream inFile(filePath);
-    if (!inFile) {
+    if (!inFile)
+    {
         std::cerr << "Error: Unable to open file for reading " << filePath << std::endl;
         return vserls;
     }
@@ -103,18 +120,21 @@ std::unordered_map<std::string, vxUser_dyh> readVsersFromFile(const std::string&
     inFile >> j;
     inFile.close();
     std::cout << "Data sucessfully read from " << filePath << std::endl;
-    for (const auto& i : j) {
-        vxUser_dyh temp;
+    for (const auto &i : j)
+    {
+        vxUser_name temp;
         temp.fromJson(i);
         vserls.insert({temp.getId(), temp});
     }
     return vserls;
 }
 
-std::priority_queue<int, std::vector<int> > readIdsFromFile(const std::string& filePath) {
-    std::priority_queue<int, std::vector<int> > ids;
+std::priority_queue<int, std::vector<int>> readIdsFromFile(const std::string &filePath)
+{
+    std::priority_queue<int, std::vector<int>> ids;
     std::ifstream inFile(filePath);
-    if (!inFile) {
+    if (!inFile)
+    {
         std::cerr << "Error: Unable to open file for reading " << filePath << std::endl;
         return ids;
     }
@@ -122,7 +142,8 @@ std::priority_queue<int, std::vector<int> > readIdsFromFile(const std::string& f
     inFile >> j;
     inFile.close();
     std::cout << "Data sucessfully read from " << filePath << std::endl;
-    for (const auto& i : j) {
+    for (const auto &i : j)
+    {
         int temp;
         std::string str;
         i.at("id").get_to(str);
@@ -132,10 +153,12 @@ std::priority_queue<int, std::vector<int> > readIdsFromFile(const std::string& f
     return ids;
 }
 
-std::priority_queue<int, std::vector<int> > readVIdsFromFile(const std::string& filePath) {
-    std::priority_queue<int, std::vector<int> > ids;
+std::priority_queue<int, std::vector<int>> readVIdsFromFile(const std::string &filePath)
+{
+    std::priority_queue<int, std::vector<int>> ids;
     std::ifstream inFile(filePath);
-    if (!inFile) {
+    if (!inFile)
+    {
         std::cerr << "Error: Unable to open file for reading " << filePath << std::endl;
         return ids;
     }
@@ -143,7 +166,8 @@ std::priority_queue<int, std::vector<int> > readVIdsFromFile(const std::string& 
     inFile >> j;
     inFile.close();
     std::cout << "Data sucessfully read from " << filePath << std::endl;
-    for (const auto& i : j) {
+    for (const auto &i : j)
+    {
         int temp;
         std::string str;
         i.at("id").get_to(str);
@@ -153,10 +177,12 @@ std::priority_queue<int, std::vector<int> > readVIdsFromFile(const std::string& 
     return ids;
 }
 
-std::priority_queue<int, std::vector<int> >readGroupsIdsFromFile(const std::string& filePath) {
-    std::priority_queue<int, std::vector<int> > ids;
+std::priority_queue<int, std::vector<int>> readGroupsIdsFromFile(const std::string &filePath)
+{
+    std::priority_queue<int, std::vector<int>> ids;
     std::ifstream inFile(filePath);
-    if (!inFile) {
+    if (!inFile)
+    {
         std::cerr << "Error: Unable to open file for reading " << filePath << std::endl;
         return ids;
     }
@@ -164,7 +190,8 @@ std::priority_queue<int, std::vector<int> >readGroupsIdsFromFile(const std::stri
     inFile >> j;
     inFile.close();
     std::cout << "Data sucessfully read from " << filePath << std::endl;
-    for (const auto& i : j) {
+    for (const auto &i : j)
+    {
         int temp;
         std::string str;
         i.at("id").get_to(str);

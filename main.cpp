@@ -1,17 +1,17 @@
 #include "QQLogin.h"
 #include "QQSignUp.h"
 #include "chooseservice.h"
-#include "friendmanager_dyh.h"
+#include "friendmanager_name.h"
 #include "global.h"
 #include "writeAndread.h"
-#include "service_dyh.h"
+#include "service_name.h"
 #include "qqmain.h"
 #include "qqdetail.h"
 #include "qqchangedetail.h"
 #include "qqresetpswd.h"
 #include "qqfriendwindow.h"
-#include "group_dyh.h"
-#include "groupmanager_dyh.h"
+#include "group_name.h"
+#include "groupmanager_name.h"
 #include "qqgroupwindow.h"
 #include "vxmain.h"
 #include "vxlogin.h"
@@ -25,8 +25,8 @@
 #include <vector>
 #include <queue>
 
-user_dyh* CurUser = nullptr;
-vxUser_dyh* CurVser = nullptr;
+user_name *CurUser = nullptr;
+vxUser_name *CurVser = nullptr;
 
 const std::string QQUserfile = "../../QQuserlist.json";
 const std::string VXUserfile = "../../VXuserlist.json";
@@ -34,29 +34,28 @@ const std::string VXUserfile = "../../VXuserlist.json";
 const std::string QQGroupfile = "../../QQgrouplist.json";
 const std::string VXGroupfile = "../../VXgrouplist.json";
 
-FriendManager_dyh QQuserls;
-VXFriendManager_dyh VXuserls;
+FriendManager_name QQuserls;
+VXFriendManager_name VXuserls;
 
-QQgroupmanager_dyh QQgroupls;
-QQgroupmanager_dyh VXgroupls;
+QQgroupmanager_name QQgroupls;
+QQgroupmanager_name VXgroupls;
 
-FriendManager_dyh& userls = QQuserls;
-VXFriendManager_dyh& vserls = VXuserls;
+FriendManager_name &userls = QQuserls;
+VXFriendManager_name &vserls = VXuserls;
 
-//std::priority_queue<int, std::vector<int> > QQids;
-//std::priority_queue<int, std::vector<int> > VXids;
+// std::priority_queue<int, std::vector<int> > QQids;
+// std::priority_queue<int, std::vector<int> > VXids;
 
+QQService_name QQ;
+WeChatService_name VX;
+// WeiBoService_name WB;
 
-QQService_dyh QQ;
-WeChatService_dyh VX;
-// WeiBoService_dyh WB;
-
-
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[])
+{
     QApplication a(argc, argv);
-    //实例化各页面
+    // 实例化各页面
     chooseService chS;
-    //QQ
+    // QQ
     Widget w;
     vuceWidget vuce_w;
     QQmain qqmain;
@@ -65,7 +64,7 @@ int main(int argc, char* argv[]) {
     QQResetPswd qqrspd;
     QQFriendWindow qqfw;
     QQgroupwindow qqgw;
-    //VX
+    // VX
     VXmain vxmain;
     VXLogin vxlog;
     VXSignUp vxsign;
@@ -74,13 +73,13 @@ int main(int argc, char* argv[]) {
     VXResetPswd vxrspd;
     VXFriendWindow vxfw;
     VXgroupwindow vxgw;
-    //连接各页面
+    // 连接各页面
     chS.linkToQQPage(&w);
     chS.linkQQmain(&qqmain);
     chS.linkToVXPage(&vxlog);
     chS.linkVXmain(&vxmain);
     chS.linkApp(&a);
-    //QQLINK
+    // QQLINK
     w.LinkVuce(&vuce_w);
     w.LinkChoose(&chS);
     w.LinkMain(&qqmain);
@@ -96,7 +95,7 @@ int main(int argc, char* argv[]) {
     qqrspd.LinkQQDetail(&qqdetail);
     qqfw.LinkMain(&qqmain);
     qqgw.LinkMain(&qqmain);
-    //VXLINL
+    // VXLINL
     vxlog.LinkVuce(&vxsign);
     vxlog.LinkChoose(&chS);
     vxlog.LinkMain(&vxmain);
@@ -112,7 +111,7 @@ int main(int argc, char* argv[]) {
     vxrspd.LinkQQDetail(&vxdetail);
     vxfw.LinkMain(&vxmain);
     vxgw.LinkMain(&vxmain);
-    //读取文件
+    // 读取文件
     QQuserls.initUserList(readUsersFromFile(QQUserfile));
     QQuserls.initIds(readIdsFromFile(QQUserfile));
     VXuserls.initUserList(readVsersFromFile(VXUserfile));

@@ -1,29 +1,30 @@
 #include "qqchangedetail.h"
 #include "ui_qqchangedetail.h"
-#include "user_dyh.h"
+#include "user_name.h"
 #include "qqdetail.h"
 #include "writeAndread.h"
 #include "qqsignup_err_name.h"
-#include"friendmanager_dyh.h"
+#include "friendmanager_name.h"
 
-extern FriendManager_dyh& userls;
-extern user_dyh* CurUser;
+extern FriendManager_name &userls;
+extern user_name *CurUser;
 inline const std::string QQUserfile = "../../QQuserlist.json";
 
-
 QQchangedetail::QQchangedetail(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::QQchangedetail) {
+    : QWidget(parent), ui(new Ui::QQchangedetail)
+{
     ui->setupUi(this);
     noname = new QQSignUp_err_name(this);
     ui->dateEdit->setMaximumDate(QDate::currentDate());
 }
 
-QQchangedetail::~QQchangedetail() {
+QQchangedetail::~QQchangedetail()
+{
     delete ui;
 }
 
-void QQchangedetail::initLdt() {
+void QQchangedetail::initLdt()
+{
     ui->idLab->setText(QString::fromStdString(CurUser->getId()));
     ui->regLab->setText(QString::fromStdString(CurUser->getReg()));
     ui->nameLdt->setText(QString::fromStdString(CurUser->getNickname()));
@@ -31,12 +32,15 @@ void QQchangedetail::initLdt() {
     ui->LocaLdt->setText(QString::fromStdString(CurUser->getLocal()));
 }
 
-void QQchangedetail::LinkQQdetail(QWidget* p) {
+void QQchangedetail::LinkQQdetail(QWidget *p)
+{
     qqdetail = p;
 }
 
-void QQchangedetail::on_confrimBtm_clicked() {
-    if (ui->nameLdt->text().isEmpty()) {
+void QQchangedetail::on_confrimBtm_clicked()
+{
+    if (ui->nameLdt->text().isEmpty())
+    {
         initLdt();
         noname->show();
         return;
@@ -45,15 +49,14 @@ void QQchangedetail::on_confrimBtm_clicked() {
     CurUser->setBirthday(ui->dateEdit->date().toString("yyyy-MM-dd").toStdString());
     CurUser->setLocation(ui->LocaLdt->text().toStdString());
     this->hide();
-    auto p = (QQDetail* )qqdetail;
+    auto p = (QQDetail *)qqdetail;
     p->initLab();
     p->show();
     writeUsersToFile(QQUserfile, userls.showUserls());
 }
 
-
-void QQchangedetail::on_exitBtm_clicked() {
+void QQchangedetail::on_exitBtm_clicked()
+{
     this->hide();
     qqdetail->show();
 }
-

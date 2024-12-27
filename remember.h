@@ -2,26 +2,29 @@
 #define REMEMBER_H
 
 #include <QDialog>
-#include "user_dyh.h"
+#include "user_name.h"
 
-namespace Ui {
-    class remember;
+namespace Ui
+{
+  class remember;
 }
 
-class remember : public QDialog {
-    Q_OBJECT
+class remember : public QDialog
+{
+  Q_OBJECT
 
-  public:
-    explicit remember(QWidget *parent = nullptr);
-    ~remember();
-    void LinkUser(user_dyh* p) {
-        u = p;
-    }
-    void initLab();
+public:
+  explicit remember(QWidget *parent = nullptr);
+  ~remember();
+  void LinkUser(user_name *p)
+  {
+    u = p;
+  }
+  void initLab();
 
-  private:
-    Ui::remember* ui;
-    user_dyh* u;
+private:
+  Ui::remember *ui;
+  user_name *u;
 };
 
 #endif // REMEMBER_H

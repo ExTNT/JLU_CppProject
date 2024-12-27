@@ -3,28 +3,30 @@
 
 #include <QWidget>
 
-namespace Ui {
-    class QQchangedetail;
+namespace Ui
+{
+  class QQchangedetail;
 }
 
-class QQchangedetail : public QWidget {
-    Q_OBJECT
+class QQchangedetail : public QWidget
+{
+  Q_OBJECT
 
-  public:
-    explicit QQchangedetail(QWidget *parent = nullptr);
-    ~QQchangedetail();
-    void initLdt();
-    void LinkQQdetail(QWidget*);
+public:
+  explicit QQchangedetail(QWidget *parent = nullptr);
+  ~QQchangedetail();
+  void initLdt();
+  void LinkQQdetail(QWidget *);
 
-  private slots:
-    void on_confrimBtm_clicked();
+private slots:
+  void on_confrimBtm_clicked();
 
-    void on_exitBtm_clicked();
+  void on_exitBtm_clicked();
 
-  private:
-    Ui::QQchangedetail* ui;
-    QWidget* qqdetail;
-    QDialog* noname;
+private:
+  Ui::QQchangedetail *ui;
+  QWidget *qqdetail;
+  QDialog *noname;
 };
 
 #endif // QQCHANGEDETAIL_H

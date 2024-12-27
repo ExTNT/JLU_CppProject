@@ -15,10 +15,10 @@ SOURCES += \
     errPassword2.cpp \
     frienditem.cpp \
     frienditem_detial.cpp \
-    friendmanager_dyh.cpp \
-    group_dyh.cpp \
+    friendmanager_name.cpp \
+    group_name.cpp \
     groupitem.cpp \
-    groupmanager_dyh.cpp \
+    groupmanager_name.cpp \
     groupmemberitem.cpp \
     main.cpp \
     nonefriend_err.cpp \
@@ -35,8 +35,8 @@ SOURCES += \
     qqresetpswd.cpp \
     qqsignup_err_name.cpp \
     remember.cpp \
-    service_dyh.cpp \
-    user_dyh.cpp \
+    service_name.cpp \
+    user_name.cpp \
     vxchangedetail.cpp \
     vxdetail.cpp \
     vxfrienditem.cpp \
@@ -59,11 +59,11 @@ HEADERS += \
     errPassword2.h \
     frienditem.h \
     frienditem_detial.h \
-    friendmanager_dyh.h \
+    friendmanager_name.h \
     global.h \
-    group_dyh.h \
+    group_name.h \
     groupitem.h \
-    groupmanager_dyh.h \
+    groupmanager_name.h \
     groupmemberitem.h \
     json.hpp \
     nonefriend_err.h \
@@ -80,8 +80,8 @@ HEADERS += \
     qqresetpswd.h \
     qqsignup_err_name.h \
     remember.h \
-    service_dyh.h \
-    user_dyh.h \
+    service_name.h \
+    user_name.h \
     vxchangedetail.h \
     vxdetail.h \
     vxfrienditem.h \

@@ -1,31 +1,34 @@
 #include "vxgroupdetial.h"
 #include "ui_vxgroupdetial.h"
-#include "user_dyh.h"
+#include "user_name.h"
 #include "vxgroupmemberitem.h"
-#include "friendmanager_dyh.h"
+#include "friendmanager_name.h"
 #include "nonefriend_err.h"
-#include "groupmanager_dyh.h"
+#include "groupmanager_name.h"
 #include "writeAndread.h"
-extern vxUser_dyh* CurVser;
-extern VXFriendManager_dyh& vserls;
-extern QQgroupmanager_dyh VXgroupls;
+extern vxUser_name *CurVser;
+extern VXFriendManager_name &vserls;
+extern QQgroupmanager_name VXgroupls;
 inline const std::string VXUserfile = "../../VXuserlist.json";
 inline const std::string VXGroupfile = "../../VXgrouplist.json";
 
 VXGroupDetial::VXGroupDetial(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::VXGroupDetial) {
+    : QWidget(parent), ui(new Ui::VXGroupDetial)
+{
     ui->setupUi(this);
     err = new nonefriend_err(this);
 }
 
-VXGroupDetial::~VXGroupDetial() {
+VXGroupDetial::~VXGroupDetial()
+{
     delete ui;
 }
 
-void VXGroupDetial::initLab() {
+void VXGroupDetial::initLab()
+{
     ui->idLab->setText(QString::fromStdString(gp->getId()));
-    if (gp->isOwner(CurVser->getId())) {
+    if (gp->isOwner(CurVser->getId()))
+    {
         ui->MyLab->setText("群主");
         return;
     }
@@ -33,29 +36,34 @@ void VXGroupDetial::initLab() {
     return;
 }
 
-void VXGroupDetial::initList() {
+void VXGroupDetial::initList()
+{
     ui->listWidget->clear();
-    for (auto& i : gp->givemembers()) {
-        VXGroupMemberItem* gmItem = new VXGroupMemberItem(this);
+    for (auto &i : gp->givemembers())
+    {
+        VXGroupMemberItem *gmItem = new VXGroupMemberItem(this);
         gmItem->LinkGrp(gp);
-        vxUser_dyh*temp = vserls.findFriend(i);
+        vxUser_name *temp = vserls.findFriend(i);
         gmItem->setIdMy(temp->getId(), temp->getNickname());
         gmItem->initBtm(ui->MyLab->text().toStdString());
-        QListWidgetItem* mItem = new QListWidgetItem(ui->listWidget);
+        QListWidgetItem *mItem = new QListWidgetItem(ui->listWidget);
         mItem->setSizeHint(QSize(340, 120));
         ui->listWidget->setItemWidget(mItem, gmItem);
     }
 }
 
-void VXGroupDetial::on_pushButton_clicked() {
+void VXGroupDetial::on_pushButton_clicked()
+{
     this->hide();
     this->close();
     delete this;
 }
 
-void VXGroupDetial::on_addBtm_clicked() {
-    vxUser_dyh* temp = vserls.findFriend(ui->idLdt->text().toStdString());
-    if (temp == nullptr) {
+void VXGroupDetial::on_addBtm_clicked()
+{
+    vxUser_name *temp = vserls.findFriend(ui->idLdt->text().toStdString());
+    if (temp == nullptr)
+    {
         err->show();
         return;
     }
@@ -65,4 +73,3 @@ void VXGroupDetial::on_addBtm_clicked() {
     writeGroupsToFile(VXGroupfile, VXgroupls.giveGroups());
     writeVsersToFile(VXUserfile, vserls.showUserls());
 }
-

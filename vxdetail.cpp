@@ -1,59 +1,71 @@
 #include "vxdetail.h"
 #include "ui_vxdetail.h"
-#include "user_dyh.h"
+#include "user_name.h"
 #include "vxchangedetail.h"
 #include "vxresetpswd.h"
-extern vxUser_dyh* CurVser;
+extern vxUser_name *CurVser;
 
 VXDetail::VXDetail(QWidget *parent)
-    : QWidget(parent), ui(new Ui::VXDetail) {
+    : QWidget(parent), ui(new Ui::VXDetail)
+{
     ui->setupUi(this);
 }
 
-VXDetail::~VXDetail() {
+VXDetail::~VXDetail()
+{
     delete ui;
 }
 
-void VXDetail::initLab() {
+void VXDetail::initLab()
+{
     ui->idLab->setText(QString::fromStdString(CurVser->getId()));
     ui->nameLab->setText(QString::fromStdString(CurVser->getNickname()));
     ui->birthLab->setText(QString::fromStdString(CurVser->getBirth()));
     ui->regLab->setText(QString::fromStdString(CurVser->getReg()));
     ui->locaLab->setText(QString::fromStdString(CurVser->getLocal()));
-    if (CurVser->giveQQ().empty()) {
+    if (CurVser->giveQQ().empty())
+    {
         ui->qqLab->setText("无关联QQ");
-    } else {
+    }
+    else
+    {
         ui->qqLab->setText(QString::fromStdString(CurVser->giveQQ()));
     }
 }
 
-void VXDetail::LinkMainWindow(QWidget *p) {
+void VXDetail::LinkMainWindow(QWidget *p)
+{
     mainWindow = p;
 }
 
-void VXDetail::on_pushButton_3_clicked() {
+void VXDetail::on_pushButton_3_clicked()
+{
     this->hide();
     mainWindow->show();
 }
 
-void VXDetail::LinkchangeDetai(QWidget *p) {
+void VXDetail::LinkchangeDetai(QWidget *p)
+{
     changeDetail = p;
 }
 
-void VXDetail::on_pushButton_clicked() {
+void VXDetail::on_pushButton_clicked()
+{
     this->hide();
-    auto p = (VXchangedetail*)changeDetail;
+    auto p = (VXchangedetail *)changeDetail;
     p->initLdt();
     p->show();
 }
 
-void VXDetail::LinkResetpd(QWidget *p) {
+void VXDetail::LinkResetpd(QWidget *p)
+{
     resetpd = p;
 }
 
-void VXDetail::on_pushButton_2_clicked() {
+void VXDetail::on_pushButton_2_clicked()
+{
     this->hide();
-    auto p = (VXResetPswd*)resetpd;
+    auto p = (VXResetPswd *)resetpd;
     p->initLab();
     p->show();
 }
