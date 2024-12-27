@@ -28,11 +28,11 @@
 user_dyh* CurUser = nullptr;
 vxUser_dyh* CurVser = nullptr;
 
-const std::string QQUserfile = "D:\\CS\\QtProject\\cpp_dyh\\QQuserlist.json";
-const std::string VXUserfile = "D:\\CS\\QtProject\\cpp_dyh\\VXuserlist.json";
+const std::string QQUserfile = "../../QQuserlist.json";
+const std::string VXUserfile = "../../VXuserlist.json";
 
-const std::string QQGroupfile = "D:\\CS\\QtProject\\cpp_dyh\\QQgrouplist.json";
-const std::string VXGroupfile = "D:\\CS\\QtProject\\cpp_dyh\\VXgrouplist.json";
+const std::string QQGroupfile = "../../QQgrouplist.json";
+const std::string VXGroupfile = "../../VXgrouplist.json";
 
 FriendManager_dyh QQuserls;
 VXFriendManager_dyh VXuserls;

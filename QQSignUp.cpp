@@ -12,7 +12,7 @@
 extern FriendManager_dyh& userls;
 
 
-inline const std::string QQUserfile = "D:\\CS\\QtProject\\cpp_dyh\\QQuserlist.json";
+inline const std::string QQUserfile = "../../QQuserlist.json";
 
 vuceWidget::vuceWidget(QWidget *parent)
     : QWidget(parent)

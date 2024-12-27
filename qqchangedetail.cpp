@@ -8,7 +8,7 @@
 
 extern FriendManager_dyh& userls;
 extern user_dyh* CurUser;
-inline const std::string QQUserfile = "D:\\CS\\QtProject\\cpp_dyh\\QQuserlist.json";
+inline const std::string QQUserfile = "../../QQuserlist.json";
 
 
 QQchangedetail::QQchangedetail(QWidget *parent)

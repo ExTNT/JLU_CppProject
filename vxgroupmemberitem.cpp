@@ -10,8 +10,8 @@
 extern vxUser_dyh* CurVser;
 extern VXFriendManager_dyh& vserls;
 extern QQgroupmanager_dyh VXgroupls;
-inline const std::string VXUserfile = "D:\\CS\\QtProject\\cpp_dyh\\VXuserlist.json";
-inline const std::string VXGroupfile = "D:\\CS\\QtProject\\cpp_dyh\\VXgrouplist.json";
+inline const std::string VXUserfile = "../../VXuserlist.json";
+inline const std::string VXGroupfile = "../../VXgrouplist.json";
 
 
 VXGroupMemberItem::VXGroupMemberItem(QWidget *parent)

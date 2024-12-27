@@ -8,7 +8,7 @@
 
 extern vxUser_dyh* CurVser;
 extern VXFriendManager_dyh& vserls;
-inline const std::string VXUserfile = "D:\\CS\\QtProject\\cpp_dyh\\VXuserlist.json";
+inline const std::string VXUserfile = "../../VXuserlist.json";
 
 
 vxfriendItem::vxfriendItem(QWidget *parent)

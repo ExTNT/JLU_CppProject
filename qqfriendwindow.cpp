@@ -9,7 +9,7 @@
 
 extern user_dyh* CurUser;
 extern FriendManager_dyh& userls;
-inline const std::string QQUserfile = "D:\\CS\\QtProject\\cpp_dyh\\QQuserlist.json";
+inline const std::string QQUserfile = "../../QQuserlist.json";
 
 QQFriendWindow::QQFriendWindow(QWidget *parent)
     : QWidget(parent)
